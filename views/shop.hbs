@@ -1,0 +1,61 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>Shop</title>
+</head>
+<body>
+        <header>
+        <div class="cont">
+                {{#with owners}}
+                <h1>Wellcome to {{firstname}} {{lastname}} shop</h1>
+                {{/with}}
+        </div>
+        <nav>
+            <ul class="nav_links"> 
+                <li><a href="/shop">Main Page</a></li>
+                <li><a href="/userinfo">Edit profile</a></li>
+                <li><a href="/add">Add items</a></li>
+            </ul>
+        </nav>
+    </header> --}}
+        <div class="small-container">
+            <h2 class="title">List Of Shop Items</h2>
+            <div class="row">
+                {{#each shopitems}}
+                <div class="col-4">
+                    <form action="/shop/{{this._id}}?_method=DELETE" method="POST">
+                        {{!-- <input type="checkbox" value="{{this._id}}"> --}}
+                        <img src="{{this.img}}" alt="{{this.title}}">
+                        <p>Esme KALA :<a href="/shop/{{this._id}}">{{this.title}}</a></p>
+                        <h4>gheymate kala :{{this.price}} $</h4>
+                        <h4>tozihat kala : {{this.description}}</h4>
+                        <div class="btn4">
+                            <input type="submit" name="vote" value="Edit">
+                            <input type="submit" name="vote" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+                        </div>
+                    </form>
+                </div>
+                {{/each}}
+            </div> 
+        </div>
+        
+        {{!-- <div class="small-container">
+            {{#if shopinvetory}}
+            <h2 class="title">List Of Your  Invetory</h2>
+            <div class="row">
+                {{#each shopinvetory}}
+                <div class="col-4">
+                    <img src="{{this.img}}" alt="{{this.title}}">
+                    <p>KALA shoma :<a href="/shop/{{this._id}}">{{this.title}}</a></p>
+                    <h4>gheymate kala :{{this.price}} $</h4>
+                </div>
+                {{/each}}
+            </div> 
+            {{/if}}
+        </div> --}}
+{{!-- </body>
+</html> --}}
